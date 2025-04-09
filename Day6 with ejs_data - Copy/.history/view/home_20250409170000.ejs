@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+      <h1>List Of Task</h1>
+    <% if (tasks.length > 0) { %>
+    <table border="2px">
+        <tr>
+          <th>SL No</th>
+          <th>Task</th>
+          <th>update</th>
+          <th>Delete</th>
+        </tr>
+       
+          <% tasks.forEach((item, index) => { %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= item.task %></td>
+              <td>update</td>
+              <td>Deleted</td>
+            </tr>
+          <% }) %>
+        </table>  
+        <% } else { %>
+          <h2>No tasks found.</h2>
+          
+        <% } %>
+    </main>
+          
+      
+</body>
+</html>
+
+
+

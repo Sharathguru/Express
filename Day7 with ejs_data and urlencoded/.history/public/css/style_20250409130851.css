@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: red;
+}
+h1{
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+h2{
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+h3{
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}

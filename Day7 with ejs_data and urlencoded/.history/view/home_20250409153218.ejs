@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Task List</title>
+</head>
+<body>
+   <main>
+    <div>
+      <h1>List Of Tasks</h1>
+      <form action="/tasks" method="post">
+        <input type="text" name="task" id="" placeholder="Enter the Task">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <br>
+    <div>
+      <% if (tasks.length > 0) { %>
+        <table>
+          <thead>
+            <tr>
+              <th>SL No</th>
+              <th>Task</th>
+              <th>Update</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+              <% tasks.forEach((item, index) => { %>
+                <tr>
+                  <td><%= index + 1 %></td>
+                  <td><%= item.task %></td>
+                  <td>
+                    <a href="/tasks/<%= item._id %>">Update</a>
+                  </td>
+                  <td>
+                    <form action="/tasks/<%= item._id %>?_method=DELETE" method="post">
+                      <button type="submit">Delete</button>
+                    </form>
+                  </td>
+                </tr>
+              <% }) %>
+          </tbody>
+        </table>  
+      <% } else { %>
+        <h2>No tasks found.</h2>
+      <% } %>
+    </div>
+   </main>
+</body>
+</html>
+
+
+

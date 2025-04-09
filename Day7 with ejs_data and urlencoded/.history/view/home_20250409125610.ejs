@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <main>
+    <div>
+      <h1>List Of Task</h1>
+      <form action="/tasks" method="post" style="display: flex; justify-content: center; width: 100%;">
+        <input type="text" name="task" id="" placeholder="Enter the Task" style="width: 50%;">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <br>
+    <div>
+      <% if (tasks.length > 0) { %>
+        <table border="1px" style="border:2px solid rgb(206, 199, 199) ; background-color: black; color: white; width: 30%; height: 40%; text-align: center;">
+            <tr style="background: linear-gradient(120deg,rgb(100, 53, 97),rgb(197, 4, 171));">
+              <th>SL No</th>
+              <th>Task</th>
+              <th>update</th>
+              <th>Delete</th>
+            </tr>
+           
+              <% tasks.forEach((item, index) => { %>
+                <tr style="background: linear-gradient(12deg,rgb(43, 67, 43),green);">
+                  <td><%= index + 1 %></td>
+                  <td><%= item.task %></td>
+                  <td>update</td>
+                  <td>Deleted</td>
+                </tr>
+              <% }) %>
+            </table>  
+            <% } else { %>
+              <h2>No tasks found.</h2>
+              
+            <% } %>
+          
+    </div>
+    
+        
+   </main>
+      
+</body>
+</html>
+
+
+
