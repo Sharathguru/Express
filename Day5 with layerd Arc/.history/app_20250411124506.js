@@ -9,7 +9,7 @@ const app = express();
 
 // Middleware
 app.use(express.json());
- app.use(cors())// Allow requests from the frontend
+ // Allow requests from the frontend
 //cors is used to allow cross-origin requests from the frontend application running on localhost:5173
 
 // Use task router
